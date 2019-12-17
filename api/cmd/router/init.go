@@ -32,5 +32,10 @@ func RegisterAllRoutes() *gin.Engine {
 	apiRoutes.GET("/user/:user_id/notes/:notes_id", handler.SelectNotes)
 	apiRoutes.DELETE("/user/:user_id/notes/:notes_id", handler.DeleteNotes)
 	apiRoutes.PUT("/user/:user_id/notes/:notes_id", handler.UpdateNodes)
+
+	apiRoutes.GET("/user/:user_id/file", handler.ListFile)
+	apiRoutes.POST("/user/:user_id/file", handler.UploadFile)
+	apiRoutes.DELETE("/user/:user_id/file/:sha", handler.DeleteFile)
+	apiRoutes.GET("/user/:user_id/file/:name", handler.DownloadFile)
 	return r
 }

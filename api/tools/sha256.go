@@ -10,7 +10,7 @@ import (
 	"encoding/hex"
 )
 
-//NewSha256String :
+//NewSha256String :根据字节获取sha256值
 func NewSha256String(data []byte) string {
 	hs := sha256.New()
 	hs.Write(data)

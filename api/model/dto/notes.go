@@ -9,6 +9,7 @@ type CreateNotesDto struct {
 	UserName string   `json:"user_name"`
 	Title    string   `json:"title"`
 	Content  string   `json:"content"`
+	Html     string   `json:"html"`
 	Tags     []string `json:"tags"`
 }
 
@@ -23,6 +24,7 @@ type NotesDto struct {
 	ID         int      `json:"id"`
 	Title      string   `json:"title"`
 	Content    string   `json:"content"`
+	Html       string   `json:"html"`
 	Tags       []string `json:"tags"`
 	CreateTime string   `json:"create_time"`
 	UpdateTime string   `json:"update_time"`

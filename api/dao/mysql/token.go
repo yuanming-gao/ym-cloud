@@ -31,7 +31,8 @@ func RetrieveAccessToken(tokenID string) *entity.AccessToken {
 	accessToken := new(entity.AccessToken)
 	err := queryRows.Scan(&accessToken.ID, &accessToken.UserID, &accessToken.ExpirationTime)
 	if err != nil {
-		log.Println("Token db.QueryRow error:", err)
+		log.Println(""+
+			"Token db.QueryRow error:", err)
 		return nil
 	}
 	return accessToken

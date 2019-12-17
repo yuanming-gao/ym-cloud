@@ -6,6 +6,12 @@
 package config
 
 const (
-	//OssAddress :
-	OssAddress = ""
+	//OSSEndpoint :访问节点
+	OSSEndpoint = "oss-cn-beijing.aliyuncs.com"
+	//OSSAccessKeyID :
+	OSSAccessKeyID = "LTAI4FpHsF8K8hHXNsLstCZb"
+	//OSSAccessKeySecret :
+	OSSAccessKeySecret = "Y2Rf7UJ76IWNsdqBycYfDldZoHcC80"
+	//OSSBucketName :
+	OSSBucketName = "gaoyuanming-ym-cloud"
 )

@@ -10,7 +10,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-//CreateNotes :
+//CreateNotes :创建笔记
 func CreateNotes(c *gin.Context) {
 	notesDto := new(dto.CreateNotesDto)
 	responseBody := new(common.APIResponseBody)
@@ -24,7 +24,7 @@ func CreateNotes(c *gin.Context) {
 	userID, err := strconv.Atoi(c.Params.ByName("user_id"))
 	if err != nil {
 		responseBody.Status = http.StatusBadRequest
-		responseBody.Msg = "请求路径错误"
+		responseBody.Msg = "api请求参数缺失"
 		common.SendAPIResponse(c, responseBody)
 		return
 	}
@@ -40,12 +40,12 @@ func CreateNotes(c *gin.Context) {
 	common.SendAPIResponse(c, responseBody)
 }
 
-//SelectNotes :
+//SelectNotes :根据id查找出笔记
 func SelectNotes(c *gin.Context) {
 	responseBody := new(common.APIResponseBody)
 	notesID, err := strconv.Atoi(c.Params.ByName("notes_id"))
 	if err != nil {
-		responseBody.Msg = "查找笔记请求的参数错误"
+		responseBody.Msg = "api请求的参数缺失"
 		responseBody.Status = http.StatusBadRequest
 		common.SendAPIResponse(c, responseBody)
 		return
@@ -64,12 +64,12 @@ func SelectNotes(c *gin.Context) {
 	common.SendAPIResponse(c, responseBody)
 }
 
-//UpdateNodes :
+//UpdateNodes :更新笔记
 func UpdateNodes(c *gin.Context) {
 	responseBody := new(common.APIResponseBody)
 	notesID, err := strconv.Atoi(c.Params.ByName("notes_id"))
 	if err != nil {
-		responseBody.Msg = "请求的参数错误"
+		responseBody.Msg = "api请求参数缺失"
 		responseBody.Status = http.StatusBadRequest
 		common.SendAPIResponse(c, responseBody)
 		return
@@ -78,14 +78,14 @@ func UpdateNodes(c *gin.Context) {
 	err = common.ParseAPIRequestJSON(c.Request, notesDto)
 	if err != nil {
 		responseBody.Status = http.StatusBadRequest
-		responseBody.Msg = err.Error()
+		responseBody.Msg = "请求的json数据错误"
 		common.SendAPIResponse(c, responseBody)
 		return
 	}
 	userID, err := strconv.Atoi(c.Params.ByName("user_id"))
 	if err != nil {
 		responseBody.Status = http.StatusBadRequest
-		responseBody.Msg = "请求路径错误"
+		responseBody.Msg = "api请求参数缺失" + err.Error()
 		common.SendAPIResponse(c, responseBody)
 		return
 	}
@@ -106,7 +106,7 @@ func DeleteNotes(c *gin.Context) {
 	responseBody := new(common.APIResponseBody)
 	notesID, err := strconv.Atoi(c.Params.ByName("notes_id"))
 	if err != nil {
-		responseBody.Msg = "删除笔记请求的参数错误"
+		responseBody.Msg = "api请求的参数缺失" + err.Error()
 		responseBody.Status = http.StatusBadRequest
 		common.SendAPIResponse(c, responseBody)
 		return
@@ -123,12 +123,12 @@ func DeleteNotes(c *gin.Context) {
 	common.SendAPIResponse(c, responseBody)
 }
 
-//ListAllNotes :
+//ListAllNotes :列出所有的笔记
 func ListAllNotes(c *gin.Context) {
 	responseBody := new(common.APIResponseBody)
 	userID, err := strconv.Atoi(c.Params.ByName("user_id"))
 	if err != nil {
-		responseBody.Msg = "请求参数错误"
+		responseBody.Msg = "api请求参数缺失" + err.Error()
 		responseBody.Status = http.StatusBadRequest
 		common.SendAPIResponse(c, responseBody)
 		return

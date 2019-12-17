@@ -7,7 +7,14 @@ package dto
 
 //FileInfoDto :
 type FileInfoDto struct {
+	Sha  string `json:"sha"`
 	Path string `json:"path"`
 	Name string `json:"name"`
-	Size int    `json:"size"`
+	Size string `json:"size"`
+	Time string `json:"time"`
+}
+
+type DownLoadDto struct {
+	Sha  string `json:"sha"`
+	Name string `json:"name"`
 }

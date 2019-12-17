@@ -8,11 +8,17 @@ package entity
 
 //File :
 type File struct {
-	Name         string
-	Size         int64 //文件大小
-	Status       bool  //文件状态是否失效
-	Path         string
-	Sha256String string
-	CreateTime   int64
-	UpdateTime   int64
+	Sha256Value string //作为文件的主键
+	Name        string
+	Type        string //文件类型
+	UserID      int
+	Size        int64 //文件大小
+	Status      int   //文件状态应为枚举类型
+	LocalAt     string
+	UploadAt    string
+	CreateTime  int64
+}
+
+func CreateFile() *File {
+	return nil
 }

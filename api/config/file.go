@@ -1,6 +1,6 @@
 package config
 
 const (
-	//FileRootPath :文件存储路径
-	FileRootPath = "/Users/gaoyuanming/Desktop/projects/idea-cloud/api"
+	//FileLocalPath :文件存储路径
+	FileLocalPath = "/Users/gaoyuanming/Desktop/projects/ym-cloud/store/"
 )

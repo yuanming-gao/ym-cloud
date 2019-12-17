@@ -25,6 +25,7 @@ func CreateNotesService(userID int, notesDto *dto.CreateNotesDto) error {
 		UserName: notesDto.UserName,
 		Title:    notesDto.Title,
 		Content:  notesDto.Content,
+		Html:     notesDto.Html,
 		Tags:     tagsString,
 	}
 	return mysql.InsertNotes(notes)
@@ -43,6 +44,7 @@ func GetOneNotesByID(notesID int) (*dto.NotesDto, error) {
 		ID:         n.ID,
 		Title:      n.Title,
 		Content:    n.Content,
+		Html:       n.Html,
 		Tags:       tagsArray,
 		CreateTime: tools.ParseUnixNanoToString(n.CreateTime),
 		UpdateTime: tools.ParseUnixNanoToString(n.UpdateTime),
@@ -58,7 +60,6 @@ func GetNotesListService(userID int) ([]*dto.NotesInfoDto, error) {
 	}
 	infoList := make([]*dto.NotesInfoDto, 0)
 	for _, v := range list {
-
 		//解析tags
 		tagsArray := strings.Split(v.Tags, "&+")
 		tagsArray = append(tagsArray[1:])
@@ -76,12 +77,19 @@ func GetNotesListService(userID int) ([]*dto.NotesInfoDto, error) {
 
 //UserEditNotesService :
 func UserEditNotesService(userID int, notesID int, notesDto *dto.CreateNotesDto) error {
+	//处理tags,添加分隔符
+	var tagsString string
+	for _, tag := range notesDto.Tags {
+		tagsString += "&+" + tag
+	}
 	newNotes := &entity.Notes{
 		ID:       notesID,
 		UserID:   userID,
 		UserName: notesDto.UserName,
 		Title:    notesDto.Title,
 		Content:  notesDto.Content,
+		Html:     notesDto.Html,
+		Tags:     tagsString,
 	}
 	return mysql.UpdateNotes(newNotes)
 }

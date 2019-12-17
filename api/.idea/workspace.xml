@@ -2,63 +2,49 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8f9af9d9-2d44-43f1-9818-106dc2a3ec62" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmd/common/response.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/oss.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/token.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dao/mysql/file.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dao/mysql/login_record.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dao/mysql/notes.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dao/mysql/notes_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dao/mysql/tag_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dao/mysql/token.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dao/mysql/user.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/dto/errs.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/dto/msg.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/dto/notes.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/entity/login_record.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/auth/token.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/auth/token_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/notes/base.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/user/base.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tools/time.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tools/time_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/file/delete.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/file/download.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/file/get.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/file/oss.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tools/conversion.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tools/s_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQL/notes.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../SQL/notes.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../SQL/table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../SQL/table.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/redis/conn.go" beforeDir="false" afterPath="$PROJECT_DIR$/cache/redis/conn.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/handler/comm.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/common/json.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmd/handler/file.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/handler/file.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/handler/note.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/handler/notes.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/handler/response.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/handler/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/handler/user.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/handler/notes.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/handler/notes.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmd/middleware/auth.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/middleware/auth.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmd/middleware/cors.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/middleware/cors.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/router/routes.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/router/init.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/file_conf.go" beforeDir="false" afterPath="$PROJECT_DIR$/config/file.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/mysql_conf.go" beforeDir="false" afterPath="$PROJECT_DIR$/config/mysql.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/server_conf.go" beforeDir="false" afterPath="$PROJECT_DIR$/config/server.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/router/init.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/router/init.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/file.go" beforeDir="false" afterPath="$PROJECT_DIR$/config/file.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/oss.go" beforeDir="false" afterPath="$PROJECT_DIR$/config/oss.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/config/server.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/mysql/file.go" beforeDir="false" afterPath="$PROJECT_DIR$/dao/mysql/file.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/mysql/notes.go" beforeDir="false" afterPath="$PROJECT_DIR$/dao/mysql/notes.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/mysql/token.go" beforeDir="false" afterPath="$PROJECT_DIR$/dao/mysql/token.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/dto/file_dto.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/dto/file.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/dto/user_dto.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/dto/user.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/dto/file.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/dto/file.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/dto/notes.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/dto/notes.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/entity/file.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/entity/file.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/entity/note.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/entity/notes.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/entity/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/entity/user.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/file.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/mysql.go" beforeDir="false" afterPath="$PROJECT_DIR$/dao/mysql/conn.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/user.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/user_service.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/user_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/entity/notes.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/entity/notes.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/notes/base.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/notes/base.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tools/sha256.go" beforeDir="false" afterPath="$PROJECT_DIR$/tools/sha256.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tools/sha256_test.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tools/uuid.go" beforeDir="false" afterPath="$PROJECT_DIR$/tools/uuid.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../web-vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tools/time_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ym-cloud-Vue" beforeDir="false" afterPath="$PROJECT_DIR$/../ym-cloud-Vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go File" />
+      </list>
+    </option>
   </component>
   <component name="GOROOT" path="/usr/local/go" />
   <component name="Git.Settings">
@@ -68,20 +54,24 @@
     <option name="indexEntireGoPath" value="false" />
   </component>
   <component name="ProjectId" id="1UxZodbzU76L1aP7XHhZ4gqBSSq" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultGoTemplateProperty" value="Go File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$" />
-    <property name="settings.editor.selected.configurable" value="watcher.settings" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="go.vgo" />
+    <property name="settings.editor.splitter.proportion" value="0.29531568" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Go Build.go build main.go">
     <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="api" />
       <working_directory value="$PROJECT_DIR$" />
@@ -91,9 +81,21 @@
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
+    <configuration name="TestConversionBitSize in api/tools" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="api" />
+      <working_directory value="$PROJECT_DIR$/tools" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="api/tools" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestConversionBitSize$" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Go Build.go build main.go" />
+        <item itemvalue="Go Test.TestConversionBitSize in api/tools" />
       </list>
     </recent_temporary>
   </component>
@@ -122,29 +124,29 @@
       <screen x="0" y="23" width="1280" height="724" />
     </state>
     <state x="240" y="50" key="#Go_Modules_(vgo)/0.23.1280.724@0.23.1280.724" timestamp="1576300416572" />
-    <state width="1238" height="340" key="GridCell.Tab.0.bottom" timestamp="1576316352196">
+    <state width="1238" height="298" key="GridCell.Tab.0.bottom" timestamp="1576596580744">
       <screen x="0" y="23" width="1280" height="724" />
     </state>
-    <state width="1238" height="340" key="GridCell.Tab.0.bottom/0.23.1280.724@0.23.1280.724" timestamp="1576316352196" />
-    <state width="1238" height="340" key="GridCell.Tab.0.center" timestamp="1576316352193">
+    <state width="1238" height="298" key="GridCell.Tab.0.bottom/0.23.1280.724@0.23.1280.724" timestamp="1576596580744" />
+    <state width="1238" height="298" key="GridCell.Tab.0.center" timestamp="1576596580743">
       <screen x="0" y="23" width="1280" height="724" />
     </state>
-    <state width="1238" height="340" key="GridCell.Tab.0.center/0.23.1280.724@0.23.1280.724" timestamp="1576316352193" />
-    <state width="1238" height="340" key="GridCell.Tab.0.left" timestamp="1576316352192">
+    <state width="1238" height="298" key="GridCell.Tab.0.center/0.23.1280.724@0.23.1280.724" timestamp="1576596580743" />
+    <state width="1238" height="298" key="GridCell.Tab.0.left" timestamp="1576596580743">
       <screen x="0" y="23" width="1280" height="724" />
     </state>
-    <state width="1238" height="340" key="GridCell.Tab.0.left/0.23.1280.724@0.23.1280.724" timestamp="1576316352192" />
-    <state width="1238" height="340" key="GridCell.Tab.0.right" timestamp="1576316352194">
+    <state width="1238" height="298" key="GridCell.Tab.0.left/0.23.1280.724@0.23.1280.724" timestamp="1576596580743" />
+    <state width="1238" height="298" key="GridCell.Tab.0.right" timestamp="1576596580744">
       <screen x="0" y="23" width="1280" height="724" />
     </state>
-    <state width="1238" height="340" key="GridCell.Tab.0.right/0.23.1280.724@0.23.1280.724" timestamp="1576316352194" />
-    <state x="149" y="24" key="SettingsEditor" timestamp="1576302116149">
+    <state width="1238" height="298" key="GridCell.Tab.0.right/0.23.1280.724@0.23.1280.724" timestamp="1576596580744" />
+    <state x="88" y="24" width="1051" height="722" key="SettingsEditor" timestamp="1576592537411">
       <screen x="0" y="23" width="1280" height="724" />
     </state>
-    <state x="149" y="24" key="SettingsEditor/0.23.1280.724@0.23.1280.724" timestamp="1576302116149" />
-    <state x="306" y="147" width="667" height="476" key="find.popup" timestamp="1576301782694">
+    <state x="88" y="24" width="1051" height="722" key="SettingsEditor/0.23.1280.724@0.23.1280.724" timestamp="1576592537411" />
+    <state x="306" y="147" width="673" height="476" key="find.popup" timestamp="1576587007472">
       <screen x="0" y="23" width="1280" height="724" />
     </state>
-    <state x="306" y="147" width="667" height="476" key="find.popup/0.23.1280.724@0.23.1280.724" timestamp="1576301782694" />
+    <state x="306" y="147" width="673" height="476" key="find.popup/0.23.1280.724@0.23.1280.724" timestamp="1576587007472" />
   </component>
 </project>

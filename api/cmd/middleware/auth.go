@@ -19,8 +19,8 @@ func Auth(c *gin.Context) {
 	userID, err := strconv.Atoi(c.Request.Header.Get("X-UserID"))
 	if err != nil {
 		responseBody := new(common.APIResponseBody)
-		responseBody.Msg = "请求参数缺失"
-		responseBody.Status = http.StatusBadRequest
+		responseBody.Msg = "缺少auth参数"
+		responseBody.Status = http.StatusForbidden
 		common.SendAPIResponse(c, responseBody)
 		c.Abort()
 		return

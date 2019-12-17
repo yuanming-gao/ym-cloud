@@ -9,11 +9,10 @@ import (
 	"api/model/entity"
 	"api/tools"
 	"log"
-	"time"
 )
 
 func InsertNotes(notes *entity.Notes) error {
-	sqlStr := "INSERT INTO notes_table (user_id, user_name, title, content, tags, create_time, update_time) VALUES (?,?,?,?,?,?,?)"
+	sqlStr := "INSERT INTO notes_table (user_id, user_name, title, content, html, tags, create_time, update_time) VALUES (?,?,?,?,?,?,?,?)"
 	insertStmt, err := db.Prepare(sqlStr)
 	if err != nil {
 		log.Println(err)
@@ -23,6 +22,7 @@ func InsertNotes(notes *entity.Notes) error {
 		notes.UserName,
 		notes.Title,
 		notes.Content,
+		notes.Html,
 		notes.Tags,
 		tools.NowTimeToUnixNano(),
 		tools.NowTimeToUnixNano())
@@ -49,8 +49,8 @@ func DeleteNotes(notesID int) error {
 }
 
 func UpdateNotes(notes *entity.Notes) error {
-	sqlStr := "UPDATE notes_table SET title=?, content=?, update_time=? WHERE id=?"
-	_, err := db.Exec(sqlStr, notes.Title, notes.Content, time.Now(), notes.ID)
+	sqlStr := "UPDATE notes_table SET title=?, content=?, html=?,tags=?, update_time=? WHERE id=?"
+	_, err := db.Exec(sqlStr, notes.Title, notes.Content, notes.Html, notes.Tags, tools.NowTimeToUnixNano(), notes.ID)
 	if err != nil {
 		return err
 	}
@@ -92,67 +92,10 @@ func SelectNotesByID(id int) (*entity.Notes, error) {
 	sqlStr := "SELECT * FROM notes_table WHERE id=?"
 	queryRows := db.QueryRow(sqlStr, id)
 	notes := new(entity.Notes)
-	err := queryRows.Scan(&notes.ID, &notes.UserID, &notes.UserName, &notes.Title, &notes.Content, &notes.Tags, &notes.CreateTime, &notes.UpdateTime)
+	err := queryRows.Scan(&notes.ID, &notes.UserID, &notes.UserName, &notes.Title, &notes.Content, &notes.Html, &notes.Tags, &notes.CreateTime, &notes.UpdateTime)
 	if err != nil {
 		log.Println("db.QueryRow error:", err)
 		return nil, err
 	}
 	return notes, nil
-}
-
-func InsertTags(tag *entity.NotesTag) error {
-	sqlStr := "INSERT INTO tag_table (notes_id, content) VALUES (?,?)"
-	insertStmt, err := db.Prepare(sqlStr)
-	if err != nil {
-		log.Println(err)
-		return err
-	}
-	_, err = insertStmt.Exec(tag.NotesID, tag.Content)
-	if err != nil {
-		log.Println(err)
-		return err
-	}
-	defer func() {
-		if err = insertStmt.Close(); err != nil {
-			log.Println(err)
-		}
-	}()
-	return nil
-}
-
-func GetNotesAllTagsByNotesID(notesId int) []*entity.NotesTag {
-	sqlStr := `select * from tag_table where notes_id=?`
-	rows, err := db.Query(sqlStr, notesId)
-	defer func() {
-		if rows != nil {
-			if err = rows.Close(); err != nil {
-				log.Println("Defer close rows error:", err)
-			}
-		}
-	}()
-	if err != nil {
-		log.Println(err)
-		return nil
-	}
-	tags := make([]*entity.NotesTag, 0)
-	for rows.Next() {
-		t := new(entity.NotesTag)
-		err := rows.Scan(&t.NotesID, &t.Content)
-		if err != nil {
-			log.Println("rows scan error:", err)
-			return nil
-		}
-		tags = append(tags, t)
-	}
-	return tags
-}
-
-func DeleteTagsByNotesID(notesId int) error {
-	sqlStr := "DELETE FROM tag_table WHERE notes_id=?"
-	_, err := db.Exec(sqlStr, notesId)
-	if err != nil {
-		log.Println("mysql delete token error:", err)
-		return err
-	}
-	return nil
 }

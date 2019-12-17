@@ -13,6 +13,7 @@ type Notes struct {
 	UserName   string
 	Title      string
 	Content    string
+	Html       string
 	Tags       string
 	CreateTime int64
 	UpdateTime int64
